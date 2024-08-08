@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""User module."""
+"""User's module."""
 import hashlib
 from models.base import Base
 
 
 class User(Base):
-    """User class."""
+    """User's class."""
 
     def __init__(self, *args: list, **kwargs: dict):
         """Initialize a User instance."""
@@ -17,7 +17,7 @@ class User(Base):
 
     @property
     def password(self) -> str:
-        """Get the password."""
+        """Gets the password."""
         return self._password
 
     @password.setter
@@ -33,7 +33,7 @@ class User(Base):
             self._password = hashlib.sha256(pwd.encode()).hexdigest().lower()
 
     def is_valid_password(self, pwd: str) -> bool:
-        """Validate a password."""
+        """Validate the password."""
         if pwd is None or type(pwd) is not str:
             return False
         if self.password is None:

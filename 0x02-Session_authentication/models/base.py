@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Base module."""
+"""Base of the module."""
 import json
 import uuid
 from os import path
@@ -12,7 +12,7 @@ DATA = {}
 
 
 class Base():
-    """Base class."""
+    """Base of the class."""
 
     def __init__(self, *args: list, **kwargs: dict):
         """Initialize a Base instance."""
@@ -100,12 +100,12 @@ class Base():
 
     @classmethod
     def all(cls) -> Iterable[TypeVar('Base')]:
-        """Return all objects."""
+        """Retrieve all objects."""
         return cls.search()
 
     @classmethod
     def get(cls, id: str) -> TypeVar('Base'):
-        """Return one object by ID."""
+        """Retrieve one object by ID."""
         s_class = cls.__name__
         return DATA[s_class].get(id)
 
